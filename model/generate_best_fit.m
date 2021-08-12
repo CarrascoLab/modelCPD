@@ -20,22 +20,12 @@ end
 filename = sprintf('../data/behavior/%s.mat',exp_name);
 load(filename);
 
-% add baseline parameter
-
-%params.stimdrive.cg_max = 2.9199;
-%params.stimdrive.cg_slope = -0.0579;
-%params.stimdrive.freq_max = 1.9364;
-%params.stimdrive.freq_slope = -0.5126;
-%params.stimdrive.bw_max = 1.523;
-%params.attn.attn_freq_max = 2.2955;
-%params.attn.attn_freq_slope = -0.1516;
-%params.attn.attn_bw = 2.8239;
-%params.attn.attn_amp_max = 5.9131;
-%params.attn.attn_amp_slope = 0;
-params.attn.attn_spread = 4;
-params.attn.attn_baseline = 1;
-params.attn.attn_sup_amp = 0;
-params.attn.attn_sup_spread = 0;
+% set fixed parameters
+params.attn.attn_spread       = 4;
+params.attn.attn_baseline     = 1;
+params.attn.attn_sup_amp      = 0;
+params.attn.attn_sup_spread   = 0;
+params.stimdrive.freq_min     = 0.5;
 
 
 
