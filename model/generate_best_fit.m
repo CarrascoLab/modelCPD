@@ -11,7 +11,7 @@
 % By:       Michael Jigo
 
 function model_dprime = generate_best_fit(exp_name,display_fit)
-addpath(genpath('./helperFun'));
+addpath(genpath('./helperfun'));
 if ~exist('display_fit','var')
    display_fit = 1;
 end
