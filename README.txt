@@ -1,8 +1,8 @@
 These directories contain the model, behavioral data and analyses associated with the paper:
 
-            Michael Jigo, David J. Heeger & Marisa Carrasco; An image-computable model on how 
+            Michael Jigo, David J. Heeger & Marisa Carrasco; An image-computable model of how 
             endogenous and exogenous attention differentially alter visual perception.
-            Proceedings of the National Academy of Sciences (in press)
+            Proceedings of the National Academy of Sciences, PNAS, doi: https://doi.org/10.1073/pnas.2106436118
 
 
 -----------------------------------------
