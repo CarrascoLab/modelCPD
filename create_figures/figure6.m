@@ -1,10 +1,9 @@
 % Purpose:  Recreate Figure 6 showing Endogenous attention performance and statistical analyses.
 %
 % By:       Michael Jigo
-% Edited:   07.07.21
 
 function figure6
-addpath(genpath('../../modelCPD_v4'));
+addpath(genpath('../../modelCPD'));
 
 %% Preprocess and format data before displaying
    % visualization parameters
@@ -160,7 +159,7 @@ addpath(genpath('../../modelCPD_v4'));
          
 
 %% Plot
-figure('name','Figure 6','position',[680 950 572 748]);
+figure('name','Figure 6');
    % CPD fits
       subplotidx  = [1 2];
       xlims       = [0 12; 0 24];

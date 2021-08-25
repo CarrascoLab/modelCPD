@@ -1,10 +1,9 @@
 % Purpose:  Recreate Figure 4 showing Neutral performance and statistical analyses.
 %
 % By:       Michael Jigo
-% Edited:   07.06.21
 
 function figure4
-addpath(genpath('../../modelCPD_v4'));
+addpath(genpath('../../modelCPD'));
 
 %% Preprocess and format data before displaying
    % visualization parameters
@@ -114,7 +113,7 @@ addpath(genpath('../../modelCPD_v4'));
 
 
 %% Display
-figure('name','Figure 4','position',[680 950 572 748]);
+figure('name','Figure 4');
    % CPD fits
       subplotidx  = [1 3];
       xlims       = [0 12; 0 24];
@@ -223,5 +222,3 @@ figure('name','Figure 4','position',[680 950 572 748]);
          legend(leg,{'\Delta AIC' '\Delta BIC'},'location','northwest');
          set(gca,'ticklength',[0.025 0.05],'xtick',xval,'xticklabel',{'full' '-\theta' '-x,y' '-f' '-all' '-sum'},'ylim',[-2 50],'ytick',0:10:50,'xlim',[-0.25 2]);
          ylabel('Model performance','fontname','arial','fontsize',10);
-
-saveas(gcf,'./fig4.png');

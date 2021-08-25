@@ -1,10 +1,9 @@
 % Purpose:  Recreate Figure 5 showing Exogenous attention performance and statistical analyses.
 %
 % By:       Michael Jigo
-% Edited:   07.06.21
 
 function figure5
-addpath(genpath('../../modelCPD_v4'));
+addpath(genpath('../../modelCPD'));
 
 %% Preprocess and format data before displaying
    % visualization parameters
@@ -128,8 +127,8 @@ addpath(genpath('../../modelCPD_v4'));
                         'attn_freq_slope' 'attn_bw' 'attn_amp_max'};
          [stimdrive, supdrive, attn] = init_parameters;
          fitparams   = boot.free_params(1);
-         stimdrive = modelp.stimdrive;
-         attn      = modelp.attn;
+         stimdrive   = modelp.stimdrive;
+         attn        = modelp.attn;
          attn.attn_baseline = 1;
 
       % run the simulation
@@ -146,7 +145,7 @@ addpath(genpath('../../modelCPD_v4'));
          
 
 %% Plot
-figure('name','Figure 5','position',[680 950 572 748]);
+figure('name','Figure 5');
    % CPD fits
       subplotidx  = [1 2];
       xlims       = [0 12; 0 24];

@@ -1,10 +1,9 @@
 % Purpose:  Recreate Figure 7 showing model comparison results of attention.
 %
 % By:       Michael Jigo
-% Edited:   07.07.21
 
 function figure7
-addpath(genpath('../../modelCPD_v4'));
+addpath(genpath('../../modelCPD'));
 
    % load bootstrap samples for all models fit to exogenous and endogenous attention experiments
       attntype = {'exo' 'endo'};
