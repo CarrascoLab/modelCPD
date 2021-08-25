@@ -28,8 +28,6 @@ computes the model's response to the image.
 ------------ Model fitting --------------
 -----------------------------------------
 Model fitting requires the BADS toolbox in the user's path: https://github.com/lacerbi/bads
-
-
  
 To fit the model to the behavioral data, use the code located in the "model" directory, named "fit_exps.m".
 Detailed information about the input parameters for the function can be found in the function.
