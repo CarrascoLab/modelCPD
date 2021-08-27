@@ -104,3 +104,7 @@ addpath(genpath('../../modelCPD'));
             end
             title(expfiles{e},'fontname','arial','fontsize',10);
       end
+
+
+   % Save figure
+      saveas(gcf,'./figure8.pdf');

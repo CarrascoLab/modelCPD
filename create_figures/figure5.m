@@ -145,7 +145,7 @@ addpath(genpath('../../modelCPD'));
          
 
 %% Plot
-figure('name','Figure 5');
+figure('name','Figure 5','position',[680 950 572 748]);
    % CPD fits
       subplotidx  = [1 2];
       xlims       = [0 12; 0 24];
@@ -309,3 +309,7 @@ figure('name','Figure 5');
          legend(leg,freqtypes,'fontname','arial','fontsize',8,'location','southeast');
          xlabel('Eccentricity (^o)','fontname','arial','fontsize',10); 
          ylabel('Gain on target','fontname','arial','fontsize',10); 
+
+
+   % Save figure
+      saveas(gcf,'./figure5.pdf');

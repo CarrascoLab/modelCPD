@@ -34,8 +34,7 @@
 
 function out = fit_exps(varargin)
 addpath(genpath('../helperfun'));
-addpath(genpath('../texture'));
-addpath(genpath('~/apps'));
+addpath(genpath('../stimuli'));
 
 %% Set default parameters
 in = {'sf_profile' ...     % 'narrow' or 'broad' or 'space_only'

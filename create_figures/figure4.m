@@ -113,7 +113,7 @@ addpath(genpath('../../modelCPD'));
 
 
 %% Display
-figure('name','Figure 4');
+figure('name','Figure 4','position',[680 950 572 748]);
    % CPD fits
       subplotidx  = [1 3];
       xlims       = [0 12; 0 24];
@@ -222,3 +222,7 @@ figure('name','Figure 4');
          legend(leg,{'\Delta AIC' '\Delta BIC'},'location','northwest');
          set(gca,'ticklength',[0.025 0.05],'xtick',xval,'xticklabel',{'full' '-\theta' '-x,y' '-f' '-all' '-sum'},'ylim',[-2 50],'ytick',0:10:50,'xlim',[-0.25 2]);
          ylabel('Model performance','fontname','arial','fontsize',10);
+
+
+   % Save figure
+      saveas(gcf,'./figure4.pdf');

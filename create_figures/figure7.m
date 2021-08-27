@@ -75,3 +75,7 @@ addpath(genpath('../../modelCPD'));
             set(gca,'ticklength',[0.025 0.05],'xtick',xval,'xticklabel',{'narrow' 'broad' 'space'},'ylim',[-2 50],'ytick',0:20:100,'xlim',[-0.25 1.2]);
             ylabel('Model performance','fontname','arial','fontsize',10);
       end
+
+
+   % Save figure
+      saveas(gcf,'./figure7.pdf');
