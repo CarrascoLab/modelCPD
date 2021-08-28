@@ -36,8 +36,8 @@ addpath(genpath('../../modelCPD'));
                bic.(attntype{a}).center(n) = median(boot.(attntype{a}).(models{m}).bic.boot-boot.(attntype{a}).(bestmodel).bic.boot);
 
             % ci
-               aic.(attntype{a}).ci(:,n) = quantile(boot.(attntype{a}).(models{m}).aic.boot-boot.(attntype{a}).(bestmodel).aic.boot,[0.16 1-0.16]);
-               bic.(attntype{a}).ci(:,n) = quantile(boot.(attntype{a}).(models{m}).bic.boot-boot.(attntype{a}).(bestmodel).bic.boot,[0.16 1-0.16]);
+               aic.(attntype{a}).ci(:,n) = quantile(boot.(attntype{a}).(models{m}).aic.boot-boot.(attntype{a}).(bestmodel).aic.boot,[0.025 1-0.025]);
+               bic.(attntype{a}).ci(:,n) = quantile(boot.(attntype{a}).(models{m}).bic.boot-boot.(attntype{a}).(bestmodel).bic.boot,[0.025 1-0.025]);
          end
       end
 

@@ -73,7 +73,6 @@ function out = combine_bootstrap_iterations(varargin)
       if f==1
          % initialize matrices for each experiment
          all_fit_params = nan(numel(fit_params),p.bootstrap);
-         all_fit_err    = nan(1,p.bootstrap);
          for e = 1:numel(p.exp_list)
             % these structures will hold model-derived d-prime and r2 for each iteration
             all_model_resp(e).dprime   = nan([size(exp_data(e).dprime) p.bootstrap]);
@@ -113,13 +112,12 @@ function out = combine_bootstrap_iterations(varargin)
          nobs(e)                                = numel(exp_data(e).dprime); 
    
          % SSE
-         model_sse(numiter,e)                   = nansum((exp_data(e).dprime(:)-model_resp(e).dprime(:)).^2);
+         model_sse(numiter,:)                   = fit_err;
    
          % R2
          rss                                    = nansum((exp_data(e).dprime(:)-model_resp(e).dprime(:)).^2);
          tss                                    = nansum((exp_data(e).dprime(:)-mean(exp_data(e).dprime(:))).^2);
          r2.(p.exp_list{e})(numiter)            = 1-(rss./tss);
-
       end
    end
 
@@ -127,9 +125,8 @@ function out = combine_bootstrap_iterations(varargin)
       % sum SSE across experiments
       nobs        = sum(nobs);          % # of observations that were fit
       nfree       = size(fit_params,1); % # of free parameters
-      total_sse   = nansum(model_sse,2);
-      tmp_aic     = nobs*log(total_sse./nobs)+(2*nfree);
-      tmp_bic     = nobs*log(total_sse)-nobs*log(nobs)+(nfree)*log(nobs);
+      tmp_aic     = nobs*log(model_sse./nobs)+(2*nfree);
+      tmp_bic     = nobs*log(model_sse)-nobs*log(nobs)+(nfree)*log(nobs);
 
       % compute bootstrapped confidence interval for each model comparison metric
       [aic.ci aic.boot] = get_bootstrap_ci(tmp_aic,0.025,1e3);
